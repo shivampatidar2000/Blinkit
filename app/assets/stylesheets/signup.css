@@ -1,0 +1,140 @@
+/* Signup Page Styling */
+
+body {
+  background: #f4f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 50px 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions input[type="submit"] {
+  width: 100%;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.actions input[type="submit"]:hover {
+  background: #4338ca;
+}
+
+/* Error messages */
+.errors {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.errors h4 {
+  margin: 0 0 8px 0;
+  color: #b91c1c;
+}
+
+.errors ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.errors li {
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+/* Devise links */
+.devise-links,
+.shared-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.devise-links a,
+.shared-links a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.devise-links a:hover,
+.shared-links a:hover {
+  text-decoration: underline;
+}
+
+.login{
+    margin-top: 13px;
+    width: 100%;
+    text-align: center;
+}
+
+.login1{
+    margin-top: 13px;
+    width: 100%;
+    text-align: end;
+}
+
+.back{
+    text-align: center;
+    background: #755353;
+    padding: 14px;
+    width: 121px;
+    margin-left: 29pc;
+    margin-top: -3pc;
+}
+
+.back a {
+    color: white;
+    text-decoration: none;
+}

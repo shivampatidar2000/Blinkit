@@ -1,0 +1,60 @@
+<h2>
+  <% if current_user.rider? %>
+    Orders to Deliver
+  <% else %>
+    My Orders
+  <% end %>
+</h2>
+
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
+    <div class="card">
+      <p>
+        <strong>Order ID:</strong> <%= order.id %>
+      </p>
+
+      <p>
+        <strong>Item Name:</strong> <%= order.item.name %>
+      </p>
+      
+      <p>
+        <strong>Status:</strong> <%= order.status.capitalize %>
+      </p>
+      <p>
+        <strong>Customer Name:</strong> <%= order.user.name %>
+      </p>
+      <p>
+        <strong>Address:</strong><br>
+        <%= order.address.street %>, 
+        <%= order.address.city %> - 
+        <%= order.address.pincode %>
+      </p>
+
+      <% if current_user.rider? && order.placed? %>
+       <div class="order_mark" >
+            <%= link_to "Mark as Delivered",
+              deliver_order_path(order),
+                data: {
+                    turbo_method: :patch,
+                    turbo_confirm: "Are you sure?"
+                }
+            %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No orders found.</p>
+<% end %>
+
+<% if user_signed_in? %>
+    <div class="logout-container" >
+        <%= link_to "Logout",
+            destroy_user_session_path,
+            data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure you want to logout?"
+            }
+        %>
+  </div>
+<% end %>

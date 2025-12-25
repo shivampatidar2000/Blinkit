@@ -1,0 +1,33 @@
+<h2>Items</h2>
+
+<% @items.each do |item| %>
+  <div class="card">
+    <p><b>Name:</b><%= item.name %></p>
+    <p><b>₹</b><%= item.price %></p>
+
+    <% if user_signed_in? && current_user.role == "customer" %>
+        <div class="add_cart" >
+            <%= link_to 'Add to Cart',
+                add_item_cart_path(item_id: item.id),
+                data: { turbo_method: :post } 
+            %>
+        </div>
+        <% else %>
+            <p><em>Login as customer to add items</em></p>
+        <% end %>
+  </div>
+<% end %>
+<div>
+<%= link_to "New Item", new_item_path if user_signed_in? && current_user.role == "seller" %>
+</div>
+<% if user_signed_in? %>
+    <div class="logout-container" >
+        <%= link_to "Logout",
+            destroy_user_session_path,
+            data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure you want to logout?"
+            }
+        %>
+  </div>
+<% end %>

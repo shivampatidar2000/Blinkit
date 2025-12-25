@@ -1,0 +1,19 @@
+current directory: /home/rails/Pictures/blinkit/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+/home/rails/.rvm/rubies/ruby-3.4.1/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/rails/Pictures/blinkit/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251224-10193-dm9kgs sitelibdir\=./.gem.20251224-10193-dm9kgs clean
+
+current directory: /home/rails/Pictures/blinkit/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251224-10193-dm9kgs sitelibdir\=./.gem.20251224-10193-dm9kgs
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/rails/Pictures/blinkit/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251224-10193-dm9kgs sitelibdir\=./.gem.20251224-10193-dm9kgs install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20251224-10193-dm9kgs/debug
+
+current directory: /home/rails/Pictures/blinkit/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251224-10193-dm9kgs sitelibdir\=./.gem.20251224-10193-dm9kgs clean

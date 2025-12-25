@@ -1,0 +1,46 @@
+<h2>Add New Item</h2>
+
+<%= form_with model: @item, local: true do |f| %>
+
+  <% if @item.errors.any? %>
+    <div style="color: red;">
+      <h4><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h4>
+      <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name, "Item Name" %><br>
+    <%= f.text_field :name, placeholder: "e.g. Milk" %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.label :price, "Price (₹)" %><br>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.label :quantity, "Available Quantity" %><br>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.submit "Create Item" %>
+  </div>
+
+<% end %>
+
+<br>
+<div class= "back">
+  <%= link_to "Back to Items", items_path %>
+</div>
