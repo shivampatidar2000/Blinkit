@@ -1,24 +1,90 @@
 # README
+# 🛒 Blinkit Clone (Ruby on Rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A basic Blinkit-like web application built using **Ruby on Rails**, demonstrating
+**role-based access**, **order flow**, and **MVC architecture**.
 
-Things you may want to cover:
+This project supports three roles:
+- **Customer**
+- **Seller**
+- **Rider**
 
-* Ruby version
+The UI is intentionally simple using **HTML + CSS**, focusing on backend logic and clean design.
 
-* System dependencies
+---
 
-* Configuration
+## 🚀 Features
 
-* Database creation
+### 👤 Authentication
+- User signup & login using **Devise**
+- Role-based redirection after login
 
-* Database initialization
+### 🏪 Seller
+- Create and manage items
+- View own listed products
 
-* How to run the test suite
+### 🛍 Customer
+- Create delivery address
+- Browse items
+- Add items to cart
+- Place orders
+- View own orders
 
-* Services (job queues, cache servers, search engines, etc.)
+### 🚴 Rider
+- View placed orders
+- Deliver orders
 
-* Deployment instructions
+---
 
-* ...
+## 🧱 Tech Stack
+
+- Ruby 3.x
+- Ruby on Rails 7.x
+- SQLite (development)
+- Devise (authentication)
+- HTML + CSS (no frontend framework)
+
+---
+
+## 🗂 Database Design
+
+### User
+```text
+id | name | email | role
+
+id | name | price | quantity | seller_id
+
+### item
+
+id | name | price | quantity | seller_id
+
+ Address
+
+ id | street | city | pincode | user_id
+
+cart 
+id | user_id
+
+cartItem
+id | cart_id | item_id | quantity
+
+order 
+id | user_id | address_id | status | rider_id
+
+
+🔐 User Roles
+Role	Permissions
+Customer	Address, Cart, Orders
+Seller	Items
+Rider	Deliver Orders
+🔀 Role-based Redirect After Login
+Role	Redirect Path
+Seller	/items
+Customer	/addresses/new
+Rider	/orders
+
+Implemented using Devise hooks:
+
+after_sign_in_path_for
+
+after_sign_up_path_for
